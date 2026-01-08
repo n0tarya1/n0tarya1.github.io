@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>0xProto</title>
+    <meta http-equiv="refresh" content="3;url=https://n0t.vercel.app" />
+    <link
+      href="https://github.com/0xType/0xProto/raw/main/dist/0xProto-Regular.woff2"
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <style>
+      @font-face {
+        font-family: "0xProto";
+        src: url("https://github.com/0xType/0xProto/raw/main/dist/0xProto-Regular.woff2")
+          format("woff2");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "0xProto", "Courier New", monospace;
+        background: #000000;
+        color: #ffffff;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        line-height: 1.6;
+        font-size: clamp(14px, 4vw, 18px);
+      }
+
+      .container {
+        text-align: center;
+        max-width: 600px;
+        background: #000000;
+        border: 1px solid #ffffff;
+        padding: 3rem 2rem;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 8vw, 4rem);
+        color: #ffffff;
+        margin-bottom: 1.5rem;
+      }
+
+      .redirect-info {
+        color: #ffffff;
+        margin: 1.5rem 0;
+        font-size: 1.1em;
+      }
+
+      code {
+        background: #111111;
+        padding: 0.3rem 0.6rem;
+        border: 1px solid #ffffff;
+        color: #ffffff;
+        font-family: "0xProto", monospace;
+      }
+
+      .manual-link {
+        display: inline-block;
+        margin-top: 1.5rem;
+        padding: 0.8rem 2rem;
+        background: #000000;
+        color: #ffffff;
+        text-decoration: none;
+        border: 1px solid #ffffff;
+      }
+
+      .countdown {
+        font-size: 1.3em;
+        font-weight: 600;
+        color: #ffffff;
+        margin: 1rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Hang Tight!</h1>
+
+      <div class="redirect-info">
+        <p>
+          Redirecting to <code>n0t.vercel.app</code> in
+          <span id="countdown">3</span> seconds...
+        </p>
+      </div>
+
+      <a href="https://n0t.vercel.app" class="manual-link">
+        Click here if not redirected
+      </a>
+    </div>
+
+    <script>
+      let timeLeft = 3;
+      const countdownEl = document.getElementById("countdown");
+
+      const timer = setInterval(() => {
+        timeLeft--;
+        countdownEl.textContent = timeLeft;
+
+        if (timeLeft <= 0) {
+          clearInterval(timer);
+          window.location.replace("https://n0t.vercel.app");
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
